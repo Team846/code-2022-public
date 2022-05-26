@@ -1,0 +1,42 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "bazel build //robot:robot.deploy --platforms=@bazelrio//platforms/roborio",
+            "problemMatcher": [],
+            "group": "build",
+        },
+        {
+            "label": "deploy",
+            "type": "shell",
+            "command": "bazel run //robot:robot.deploy --platforms=@bazelrio//platforms/roborio",
+            "problemMatcher": [],
+            "group": "build",
+        },
+        {
+            "label": "run (desktop)",
+            "type": "shell",
+            "command": "bazel run //robot:robot.simulation.gui",
+            "problemMatcher": [],
+            "group": "build",
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "bazel test --test_output=all //...",
+            "problemMatcher": [],
+            "group": "test",
+        },
+        {
+            "label": "refresh c++ autocomplete",
+            "type": "shell",
+            "command": "bazel run @hedron_compile_commands//:refresh_all",
+            "problemMatcher": [],
+            "group": "none",
+        },
+    ]
+}
