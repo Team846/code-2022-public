@@ -15,21 +15,21 @@ Features
  
 ---
 
-## setup
+## Setup
 1. install bazel
 2. install clangd vscode extension (not microsoft c++ extension)
 3. run `bazel run @hedron_compile_commands//:refresh_all` for c++ autocompletion
 4. restart vscode
 
-## build for roborio
+## Build for roborio
 `bazel build //robot:robot.deploy --platforms=@bazelrio//platforms/roborio`
 
-## deploy to roborio
+## Deploy to roborio
 `bazel run //robot:robot.deploy --platforms=@bazelrio//platforms/roborio`
 
-## run desktop simulation
+## Run desktop simulation
 `bazel run //robot:robot.simulation.gui`
 
-## run unit tests
+## Run unit tests
 `bazel test --test_output=all //...`
 
